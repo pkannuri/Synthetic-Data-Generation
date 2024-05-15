@@ -1,0 +1,47 @@
+1. Data Preparation
+- Codes for preparing data into available format for analysis
+- Two versions of sample datasets are used: 1K Sample and 100K Sample
+- csv_filtered: original dataset
+(1) Check_Condition
+: Check the top 10 most common disorders from the conditions file
+(2) CSV_Conversion
+: Convert original CSV files into available format for analysis
+: Leave the data of the latest day and flatten the data
+(3) CSV_Merge
+: Merge the converted dataset on patient_id
+(4) Attribute_Selection
+: Select attributes that are most common and relevant to 'viral sinusitis' and conduct feature engineering
+
+
+2. Preprocessing
+(1) Impute_and_Encode
+: Impute missing values
+: One hot encode categorical data
+: Remove attributes with feature importance
+(2) Feature_Importance
+: Check feature importance with Gradient Boosting
+
+3. Synthetic Data Generation
+- Codes for synthetic data generation with each model
+(1) CTGAN
+(2) DataSynthesizer
+(3) VAE
+(4) GaussianCopula
+(5) CopulaGAN
+
+4. Noise Addition
+- AdaptiveNoise
+: Add noise to a synthetic dataset
+: Laplace noise for continuous variables, salt-and-pepper noise for binary columns
+: Adaptive noise using feature importance
+
+5. Model Evaluation
+(1) DataEvaluation
+: Compare synthetic data with real data
+: Attribute distribution, correlation matrix, clustering, etc.
+(2) Privacy_Utility
+: Check privacy vs utility trade-off
+: Calculate predictive performance (ROC AUC) while changing privacy level (epsilon)
+(3) Prediction_Comparison
+: Compare the predictive performance of the synthetic dataset with the original dataset
+: Confusion matrix, ROC curve
